@@ -13,5 +13,14 @@ class Credential:
     def save_credentials(self):
         Credential.credential_list.append(self)
         
-''''''
-        
+@classmethod
+def generate_passowrd(cls):
+    pass
+    
+@classmethod
+def display_credentials(cls, password):
+    pass
+
+@classmethod
+def credential_exist(cls, name):
+    pass 
