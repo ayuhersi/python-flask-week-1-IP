@@ -12,22 +12,32 @@ class User:
         self.password = user_password
         
     def save_user(self):
-        pass
+        User.user_list.append(self)
           
     @classmethod 
     def find_credential(cls, name):
-        pass 
+        for credential in Credential.credential_list:
+            if credential.credential_name == name:
+                return True 
+        return False 
     
     @classmethod 
     def log_in(cls, name, password):
-        pass  
-    
+        for user in cls.user_list:
+            if user.user_name == name and user.user_password == password:
+                return True 
+        return False
+     
     @classmethod
     def display_user(cls, name, password ):
-        pass
+        return cls.user_list
       
     @classmethod
     def user_exist(cls, name):
-        pass 
+        for user in cls.user_list:
+            if user.user_name == name:
+                return True
+        return False 
+            
 
     
